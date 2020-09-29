@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Unimagdalena</string>
+    <string name="codigo">Codigo</string>
+    <string name="nombre">Nombre</string>
+    <string name="programa">Programa</string>
+    <string name="guardar">Guardar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="Listado">Listado</string>
+</resources>
