@@ -43,17 +43,6 @@ public class EstudianteController {
         }
     }
 
-    public Cursor allEstudiantes (){
-        try{
-            SQLiteDatabase sql = bd.getReadableDatabase();
-            Cursor c = sql.query(DefBD.tabla_est,null,null,null,null,null,null);
-            return c;
-        }catch (Exception ex){
-            Toast.makeText(c,"Error consulta Estudiantes",Toast.LENGTH_LONG).show();
-            return  null;
-        }
-    }
-
     public Cursor allEstudiantes2 (){
         try{
             SQLiteDatabase sql = bd.getReadableDatabase();
@@ -62,6 +51,33 @@ public class EstudianteController {
         }catch (Exception ex){
             Toast.makeText(c,"Error consulta Estudiantes",Toast.LENGTH_LONG).show();
             return  null;
+        }
+    }
+
+    public void Eliminar( String cod){
+        try{
+
+            SQLiteDatabase sql = bd.getWritableDatabase();
+
+            String args[] = new String[]{cod};
+            long a = sql.delete(DefBD.tabla_est,"codigo=?",args);
+            Toast.makeText(c, "Se ha Borrado El Estudiante", Toast.LENGTH_SHORT).show();
+        }catch (Exception ex){
+            Toast.makeText(c,"Error consulta",Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void Modificar(String cod,String nombre,String programa){
+        try{
+            SQLiteDatabase sql = bd.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("nombre",nombre);
+            values.put("programa",programa);
+            String args[] = new String[]{cod};
+            long a = sql.update(DefBD.tabla_est,values,"codigo=?",args);
+            Toast.makeText(c, "Se ha Modificado El Estudiante", Toast.LENGTH_SHORT).show();
+        }catch (Exception ex){
+            Toast.makeText(c,"Error consulta",Toast.LENGTH_LONG).show();
         }
     }
 

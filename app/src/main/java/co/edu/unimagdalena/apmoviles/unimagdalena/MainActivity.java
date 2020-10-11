@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         codigo = findViewById(R.id.editTextTextPersonName);
         nombre = findViewById(R.id.editTextTextPersonName2);
         programa = findViewById(R.id.editTextTextPersonName3);
+        codigo.setText("");
+        nombre.setText("");
+        programa.setText("");
         ec = new EstudianteController(this);
         agregar.setOnClickListener(this);
         cancelar.setOnClickListener(this);

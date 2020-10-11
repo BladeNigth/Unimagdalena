@@ -2,6 +2,7 @@ package co.edu.unimagdalena.apmoviles.unimagdalena;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,13 @@ public class ListadoActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView cod = view.findViewById(R.id.txtcodigo);
-                Toast.makeText(ListadoActivity.this,cod.getText().toString(), Toast.LENGTH_SHORT).show();
+                TextView nombre = view.findViewById(R.id.txtnombre);
+                TextView programa = view.findViewById(R.id.txtprograma);
+                Intent i = new Intent(getApplicationContext(),EditarActivity.class);
+                i.putExtra("codigo",cod.getText().toString());
+                i.putExtra("nombre",nombre.getText().toString());
+                i.putExtra("programa",programa.getText().toString());
+                startActivity(i);
             }
         });
     }
