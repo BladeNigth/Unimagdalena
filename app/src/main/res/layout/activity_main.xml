@@ -72,18 +72,24 @@
             android:id="@+id/btnguardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/boton_redondo"
             android:text="@string/guardar" />
 
         <Button
             android:id="@+id/btncancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/boton_redondo"
             android:text="@string/cancelar" />
 
         <Button
             android:id="@+id/btnlistado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/boton_redondo"
             android:text="@string/Listado" />
     </LinearLayout>
 
