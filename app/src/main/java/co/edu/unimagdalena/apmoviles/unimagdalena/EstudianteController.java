@@ -46,7 +46,7 @@ public class EstudianteController {
     public Cursor allEstudiantes2 (){
         try{
             SQLiteDatabase sql = bd.getReadableDatabase();
-            Cursor c = sql.rawQuery("select codigo as _id, nombre, programa from estudiante",null);
+                Cursor c = sql.rawQuery("select codigo as _id, nombre, programa from estudiante",null);
             return c;
         }catch (Exception ex){
             Toast.makeText(c,"Error consulta Estudiantes",Toast.LENGTH_LONG).show();
